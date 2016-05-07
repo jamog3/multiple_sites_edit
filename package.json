@@ -2,9 +2,12 @@
   "name": "multiple_sites_edit",
   "version": "1.0.0",
   "scripts": {
-    "build": "gulp html_typeA && gulp html_typeB && gulp html_typeC"
+    "build": "gulp del && gulp html_typeA && gulp html_typeB && gulp html_typeC && gulp imgMin && gulp imgMinPng",
+    "html": "gulp html_typeA && gulp html_typeB && gulp html_typeC",
+    "img": "gulp imgMin && gulp imgMinPng"
   },
   "devDependencies": {
+    "del": "^2.2.0",
     "gulp": "^3.9.1",
     "gulp-cached": "^1.1.0",
     "gulp-changed": "^1.3.0",

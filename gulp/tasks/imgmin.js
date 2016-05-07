@@ -21,7 +21,9 @@ gulp.task( 'imgMin', function(){
       progressive: true,
       interlaced: true
     } ))
-    .pipe(gulp.dest( config.dist.img ));
+    .pipe(gulp.dest( config.dist_typeA.img ))
+    .pipe(gulp.dest( config.dist_typeB.img ))
+    .pipe(gulp.dest( config.dist_typeC.img ));
 });
 
 gulp.task( 'imgMinPng', function(){
@@ -36,10 +38,12 @@ gulp.task( 'imgMinPng', function(){
         // pngquantを使用
         // 色が変わるようなら100固定にする
         pngquant({
-          quality: 80 - 100,
+          quality: 100,
           speed: 1
         })
       ]
     }))
-    .pipe(gulp.dest( config.dist.img ));
+    .pipe(gulp.dest( config.dist_typeA.img ))
+    .pipe(gulp.dest( config.dist_typeB.img ))
+    .pipe(gulp.dest( config.dist_typeC.img ));
 });
